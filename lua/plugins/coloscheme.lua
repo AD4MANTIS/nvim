@@ -1,11 +1,16 @@
 return {
-  {
-    'Mofiqul/vscode.nvim',
-  },
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "vscode",
+    {
+        "Mofiqul/vscode.nvim",
     },
-  }
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
+    },
+    {
+        "LazyVim/LazyVim",
+        opts = {
+            colorscheme = "vscode",
+        },
+    },
 }
