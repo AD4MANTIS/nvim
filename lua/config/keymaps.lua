@@ -2,5 +2,6 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ".m '<-2<CR>gv=gv")
+vim.keymap.set("n", "<leader>vs", "<cmd>w<cr>", { desc = "Save" })
+vim.keymap.set("n", "<leader>vw", "<cmd>bd<cr>", { desc = "Close Tab" })
+vim.keymap.set("n", "<leader>vö", "<C-/>", { desc = "Toggle Terminal", remap = true })
