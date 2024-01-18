@@ -3,5 +3,5 @@
 -- Add any additional keymaps here
 
 vim.keymap.set("n", "<leader>vs", "<cmd>w<cr>", { desc = "Save" })
-vim.keymap.set("n", "<leader>vw", "<cmd>bd<cr>", { desc = "Close Tab" })
+vim.keymap.set("n", "<leader>vw", "<leader>bd", { desc = "Close Tab" })
 vim.keymap.set("n", "<leader>vö", "<C-/>", { desc = "Toggle Terminal", remap = true })
