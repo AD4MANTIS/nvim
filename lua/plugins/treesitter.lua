@@ -3,6 +3,7 @@ return {
         "nvim-treesitter/nvim-treesitter",
         opts = {
             ensure_installed = {
+                "c_sharp",
                 "html",
                 "json",
                 "lua",
@@ -15,10 +16,10 @@ return {
                 "yaml",
             },
             highlight = { enable = true },
-            auto_install = false
+            auto_install = false,
         },
     },
     {
-        'nvim-treesitter/playground'
-    }
+        "nvim-treesitter/playground",
+    },
 }
