@@ -8,5 +8,13 @@ set("n", "<leader>vS", "<cmd>wall<cr>", { desc = "Save all" })
 set("n", "<leader>vw", "<leader>bd", { desc = "Close Tab", remap = true })
 
 set("n", "<leader>vö", ":ToggleTerm direction=horizontal <CR>", { desc = "Toggle Terminal" })
-set("n", "<leader>bT", ":ToggleTerm direction=horizontal <CR>", { desc = "Toggle horizontal Terminal split" })
-set("n", "<leader>bt", ":ToggleTerm direction=float <CR>", { desc = "Toggle float Terminal" })
+set("n", "<leader>tT", ":ToggleTerm direction=horizontal <CR>", { desc = "Toggle Terminal" })
+set("n", "<leader>tt", ":ToggleTerm direction=float <CR>", { desc = "Toggle float Terminal" })
+set("n", "<leader>tf", ":TermSelect <CR>", { desc = "Select Terminal" })
+set("n", "<leader>tn", function()
+    vim.ui.input({ prompt = "Terminal #" }, function(input)
+        if input ~= nil and input ~= "" then
+            vim.cmd(input .. 'TermExec cmd="clear"')
+        end
+    end)
+end, { desc = "New Terminal" })
