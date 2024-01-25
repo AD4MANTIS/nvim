@@ -8,3 +8,5 @@ if not vim.g.vscode then
         background_colour = "#000000",
     })
 end
+
+require("config.lsp")
