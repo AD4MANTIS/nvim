@@ -1,6 +1,13 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
   opts = {
+    close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
+
+    window = {
+      position = "left",
+      width = 45,
+    },
+
     filesystem = {
       filtered_items = {
         visible = false, -- when true, they will just be displayed differently than normal items
