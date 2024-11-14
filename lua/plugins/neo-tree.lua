@@ -8,6 +8,8 @@ return {
       width = 45,
     },
 
+    -- TODO: start with preview mode enabled
+
     filesystem = {
       filtered_items = {
         visible = false, -- when true, they will just be displayed differently than normal items
@@ -25,8 +27,13 @@ return {
         },
         never_show = { -- remains hidden even if visible is toggled to true, this overrides always_show
           ".DS_Store",
-          --"thumbs.db",
+          "thumbs.db",
         },
+      },
+
+      follow_current_file = {
+        enabled = true, -- This will find and focus the file in the active buffer every time
+        --              -- the current file is changed while the tree is open.
       },
     },
   },

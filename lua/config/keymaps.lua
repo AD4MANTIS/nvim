@@ -17,10 +17,9 @@ set("n", "n", "nzzzv", { desc = "Next Search Result" })
 set("n", "N", "Nzzzv", { desc = "Next Search Result" })
 
 set("x", "<leader>p", '"_dP', { desc = "Paste and keep paste Buffer" })
-set({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete and keep paste Buffer" })
+-- set({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete and keep paste Buffer" }) TODO: Overlaps with '+debug'
 
--- set("n", "<leader>sB", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Buffer Search and Replace" })
-set("n", "<leader>sr", "", { desc = "Replace" })
+set("n", "<leader>sr", "", { desc = "replace" })
 set("n", "<leader>srr", "<cmd>GrugFar<cr>", { desc = "Replace (global)" })
 set("n", "<leader>srb", ":%s/", { desc = "Replace in Buffer" })
 set("n", "<leader>srw", [[:%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace current Word in Buffer" })
