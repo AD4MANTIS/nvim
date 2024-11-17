@@ -19,7 +19,16 @@ set("n", "N", "Nzzzv", { desc = "Next Search Result" })
 set("x", "<leader>p", '"_dP', { desc = "Paste and keep paste Buffer" })
 -- set({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete and keep paste Buffer" }) TODO: Overlaps with '+debug'
 
-set("n", "<leader>sr", "", { desc = "replace" })
-set("n", "<leader>srr", "<cmd>GrugFar<cr>", { desc = "Replace (global)" })
+set({ "n", "x" }, "<leader>sr", "", { desc = "replace" })
+set({ "n", "x" }, "<leader>srr", function()
+  local grug = require("grug-far")
+  grug.open({ transient = true })
+end, { desc = "Replace (global)" })
+-- TODO: Prefill selection in Visual Mode
 set("n", "<leader>srb", ":%s/", { desc = "Replace in Buffer" })
 set("n", "<leader>srw", [[:%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace current Word in Buffer" })
+
+set("i", "<C-CR>", function()
+  local cmp = require("cmp")
+  cmp.abort()
+end, { desc = "Abort completion" })
