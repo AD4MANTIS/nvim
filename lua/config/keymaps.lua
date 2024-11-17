@@ -26,9 +26,15 @@ set({ "n", "x" }, "<leader>srr", function()
 end, { desc = "Replace (global)" })
 -- TODO: Prefill selection in Visual Mode
 set("n", "<leader>srb", ":%s/", { desc = "Replace in Buffer" })
+set("n", "<leader>srl", ":s/", { desc = "Replace in Line" })
 set("n", "<leader>srw", [[:%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace current Word in Buffer" })
 
 set("i", "<C-CR>", function()
   local cmp = require("cmp")
   cmp.abort()
 end, { desc = "Abort completion" })
+
+if not ad4mantis.atWork then
+  set("n", "<leader>a", "", { desc = "ai" })
+  set("n", "<leader>at", "<cmd>SupermavenToggle<cr>", { desc = "Toggle ai" })
+end
