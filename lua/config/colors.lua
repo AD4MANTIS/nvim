@@ -1,5 +1,7 @@
 function ColorMyPencils()
   local hl = vim.api.nvim_set_hl
+  local c = require("vscode.colors").get_colors()
+  -- local isDark = vim.o.background == "dark"
 
   --hl(0, "Comment", { fg = "#6A9955" })
   --hl(0, "Constant", { fg = "#569CD6" })
@@ -25,6 +27,8 @@ function ColorMyPencils()
   --hl(0, "@field", { fg = "#9CDCFE" })
   --hl(0, "@variable", { fg = "#9CDCFE" })
   --hl(0, "@parameter", { fg = "#9CDCFE" })
+
+  hl(0, "CmpGhostText", { fg = c.vscCursorLight, italic = true })
 end
 
--- ColorMyPencils()
+ColorMyPencils()
