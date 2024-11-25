@@ -16,25 +16,35 @@ set("n", "<C-u>", "<C-u>zz", { desc = "Half-page up" })
 set("n", "n", "nzzzv", { desc = "Next Search Result" })
 set("n", "N", "Nzzzv", { desc = "Next Search Result" })
 
-set("x", "<leader>p", '"_dP', { desc = "Paste and keep paste Buffer" })
--- set({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete and keep paste Buffer" }) TODO: Overlaps with '+debug'
+-- Change and delete without changing the paste buffer
+set("x", "<leader>P", '"_dP', { desc = "Paste and keep paste Buffer" })
+set({ "n", "v" }, "<leader>D", '"_d', { desc = "Delete and keep paste Buffer" })
 
-set({ "n", "x" }, "<leader>sr", "", { desc = "replace" })
+-- Search and Replace
+set({ "n", "x" }, "<leader>sr", "", { desc = "+replace" })
 set({ "n", "x" }, "<leader>srr", function()
-  local grug = require("grug-far")
-  grug.open({ transient = true })
+  require("grug-far").open({ transient = true })
 end, { desc = "Replace (global)" })
 -- TODO: Prefill selection in Visual Mode
 set("n", "<leader>srb", ":%s/", { desc = "Replace in Buffer" })
 set("n", "<leader>srl", ":s/", { desc = "Replace in Line" })
-set("n", "<leader>srw", [[:%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace current Word in Buffer" })
+set("x", "<leader>srl", ":s/<C-r><C-w>/<C-r><C-w>/g<Left><Left><Left>", { desc = "Replace in Line" })
+set("n", "<leader>srw", [[:%s/<C-r><C-w>/<C-r><C-w>/g<Left><Left><Left>]], { desc = "Replace current Word in Buffer" })
 
+-- Fix completion canceling
 set("i", "<C-CR>", function()
-  local cmp = require("cmp")
-  cmp.abort()
+  require("cmp").abort()
 end, { desc = "Abort completion" })
 
+set("i", "<CS-Space>", function()
+  require("cmp").abort()
+end, { desc = "Abort completion" })
+
+-- Supermaven
 if not ad4mantis.atWork then
   set("n", "<leader>a", "", { desc = "ai" })
   set("n", "<leader>at", "<cmd>SupermavenToggle<cr>", { desc = "Toggle ai" })
 end
+
+-- Capitalize first letter of word
+set("n", "<leader>~", "viwo<esc>~ ", { desc = "Toggle Capital Letter" })
