@@ -28,8 +28,8 @@ end, { desc = "Replace (global)" })
 -- TODO: Prefill selection in Visual Mode
 set("n", "<leader>srb", ":%s/", { desc = "Replace in Buffer" })
 set("n", "<leader>srl", ":s/", { desc = "Replace in Line" })
-set("x", "<leader>srl", ":s/<C-r><C-w>/<C-r><C-w>/g<Left><Left><Left>", { desc = "Replace in Line" })
-set("n", "<leader>srw", [[:%s/<C-r><C-w>/<C-r><C-w>/g<Left><Left><Left>]], { desc = "Replace current Word in Buffer" })
+set("x", "<leader>srl", ":s/<C-r><C-w>/<C-r><C-w>/g<Left><Left>", { desc = "Replace in Line" })
+set("n", "<leader>srw", [[:%s/<C-r><C-w>/<C-r><C-w>/g<Left><Left>]], { desc = "Replace current Word in Buffer" })
 
 -- Fix completion canceling
 set("i", "<C-CR>", function()
