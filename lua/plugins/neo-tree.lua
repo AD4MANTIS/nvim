@@ -4,8 +4,20 @@ return {
     close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
 
     window = {
-      position = "left",
-      width = 45,
+      position = "right",
+      width = 50,
+    },
+
+    event_handlers = {
+      -- automatically start the preview Mode
+      {
+        event = "neo_tree_buffer_enter",
+        handler = function()
+          vim.defer_fn(function()
+            vim.api.nvim_feedkeys("P", "", false)
+          end, 100)
+        end,
+      },
     },
 
     -- TODO: start with preview mode enabled
