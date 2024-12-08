@@ -18,7 +18,8 @@ set("n", "N", "Nzzzv", { desc = "Next Search Result" })
 
 -- Change and delete without changing the paste buffer
 set("x", "<leader>P", '"_dP', { desc = "Paste and keep paste Buffer" })
-set({ "n", "v" }, "<leader>D", '"_d', { desc = "Delete and keep paste Buffer" })
+set({ "n", "x" }, "<leader>C", '"_c', { desc = "Change and keep paste Buffer" })
+set({ "n", "x" }, "<leader>D", '"_d', { desc = "Delete and keep paste Buffer" })
 
 -- Search and Replace
 set({ "n", "x" }, "<leader>sr", "", { desc = "+replace" })
@@ -40,6 +41,17 @@ set("i", "<CS-Space>", function()
   require("cmp").abort()
 end, { desc = "Abort completion" })
 
+-- Coding
+set("n", "<C-.>", function()
+  local line = vim.api.nvim_win_get_cursor(0)[1] -- Get the current line number (1-indexed)
+  vim.lsp.buf.code_action({
+    range = {
+      ["start"] = { line, 0 },
+      ["end"] = { line, vim.api.nvim_buf_get_lines(vim.api.nvim_get_current_buf(), line - 1, line, false)[1]:len() },
+    },
+  }) -- Trigger the code action
+end, { desc = "Code actions in Line" })
+
 -- Supermaven
 if not ad4mantis.atWork then
   set("n", "<leader>a", "", { desc = "ai" })
@@ -47,4 +59,4 @@ if not ad4mantis.atWork then
 end
 
 -- Capitalize first letter of word
-set("n", "<leader>~", "viwo<esc>~ ", { desc = "Toggle Capital Letter" })
+set("n", "<leader>~", "viwo<esc>~<Left>", { desc = "Toggle Capital Letter" })
