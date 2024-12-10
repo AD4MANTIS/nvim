@@ -60,3 +60,7 @@ end
 
 -- Capitalize first letter of word
 set("n", "<leader>~", "viwo<esc>~<Left>", { desc = "Toggle Capital Letter" })
+
+-- Centered Layout
+set("n", "<leader>up", ":set numberwidth=20<cr>", { desc = "Add Padding (center)" })
+set("n", "<leader>uP", ":set numberwidth=1<cr>", { desc = "Remove Padding (un-center)" })
