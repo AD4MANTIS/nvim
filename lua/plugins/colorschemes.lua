@@ -4,10 +4,11 @@ return {
   {
     -- https://github.com/catppuccin/nvim?tab=readme-ov-file#configuration
     "catppuccin/nvim",
+    name = "catppuccin",
     opts = {
       transparent_background = true,
+      color_overrides = {},
     },
-    color_overrides = {},
   },
   {
     "Mofiqul/vscode.nvim",
