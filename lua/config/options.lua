@@ -7,7 +7,6 @@ vim.g.maplocalleader = " "
 
 local opt = vim.opt
 
-vim.o.numberwidth = 20 -- Give the code some left padding to center it a bit
 opt.linebreak = true -- Wrap lines at convenient points
 opt.scrolloff = 8 -- Lines of context
 opt.spelllang = { "en", "de" }
