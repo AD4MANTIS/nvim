@@ -17,6 +17,7 @@ set("n", "n", "nzzzv", { desc = "Next Search Result" })
 set("n", "N", "Nzzzv", { desc = "Next Search Result" })
 
 -- Change and delete without changing the paste buffer
+set({ "n", "x" }, "x", '"_x', { desc = "Delete and keep paste Buffer" })
 set("x", "<leader>P", '"_dP', { desc = "Paste and keep paste Buffer" })
 set({ "n", "x" }, "<leader>C", '"_c', { desc = "Change and keep paste Buffer" })
 set({ "n", "x" }, "<leader>D", '"_d', { desc = "Delete and keep paste Buffer" })
