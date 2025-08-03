@@ -14,15 +14,10 @@ opt.spelllang = { "en", "de" }
 opt.tabstop = 4 -- Number of spaces tabs count for
 opt.softtabstop = 4
 opt.shiftwidth = 4 -- Size of an indent
+opt.expandtab = true -- Use spaces instead of tabs
 
 opt.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode
-
-opt.termguicolors = true -- True color support
-
--- opt.colorcolumn = "100"
 
 -- Enable the option to require a Prettier config file
 -- If no prettier config file is found, the formatter will not be used
 vim.g.snacks_animate = false
-
-vim.g.lazyvim_prettier_needs_config = false

@@ -45,14 +45,10 @@ return {
       hl(0, "CmpGhostText", { fg = c.vscCursorLight, italic = true })
 
       return {
-        -- Enable transparent background
-        transparent = true,
+        transparent = true, -- Enable transparent background
         color_overrides = {
           vscCursorLight = "#BEBEBE",
           vscLineNumber = "#8A8A8A",
-        },
-        group_overrides = {
-          NeoTreeFileIcon = {}, -- TODO: Currently the icons are to yellow
         },
       }
     end,
