@@ -1,7 +1,7 @@
 return {
   "echasnovski/mini.pairs",
   enabled = false,
-  config = {
+  opts = {
     modes = { insert = true, command = false, terminal = false },
   },
 }

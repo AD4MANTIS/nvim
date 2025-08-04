@@ -11,7 +11,8 @@
   ],
   "install_version": 8,
   "news": {
-    "NEWS.md": "10960"
+    "NEWS.md": "10960",
+    "doc/news.txt": "12879"
   },
   "version": 8
 }
